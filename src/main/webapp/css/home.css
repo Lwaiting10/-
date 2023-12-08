@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.content-container {
+    margin: 20px auto; /* 水平居中 */
+    max-width: 1000px; /* 控制最大宽度 */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border-bottom: 1px solid #ffffff;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #ffffff49;
+    border-radius: 5px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5) inset;
+}
+
+form {
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+}
+
+input[type="text"] {
+    width: 80%;
+    height: 40px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    color: rgb(0, 0, 0);
+    border: 5px solid transparent;
+    background: rgba(255, 255, 255, .5);
+    border-radius: 5px;
+    padding: 5px 20px 0 20px;
+    transition: 0.3s;
+    font-size: 18px;
+    outline: none
+}
+
+input::placeholder {
+    color: #92A7E8;
+}
+
+input[type="submit"] {
+    margin-top: 10px;
+    width: 20%;
+    height: 40px;
+    background-color: #ffffff49;
+    border-radius: 25px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5) inset;
+    color: #007bff;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+}
+
+.subtitle {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link {
+    color: #007bff;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+.error-message-box {
+    margin-bottom: -40px;
+    display: flex;
+    justify-content: center;
+}
+
+.error-message {
+    color: red;
+    align-items: center;
+}
+
+label {
+    margin-left: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
