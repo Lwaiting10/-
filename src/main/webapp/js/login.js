@@ -51,7 +51,8 @@ document.getElementById('switch').addEventListener('click', function (event) {
         document.getElementById('username').placeholder = '用户名';
         document.getElementById('password').placeholder = '密码';
         document.getElementById('password').type = 'password';
-        captchaGroup.style.display = "";
+        captchaGroup.style = "display: flex;align-items: center";
+        // captchaGroup.style.display = "flex";
         document.getElementById('captcha').setAttribute('required', 'required');
     }
 });

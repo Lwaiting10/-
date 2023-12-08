@@ -103,11 +103,18 @@ input[type="checkbox"] {
     color: #7597ff;
     font-size: 18px;
 }
-.error-message-box{
-     display: flex;
-     justify-content: center;
- }
+
+.error-message-box {
+    display: flex;
+    justify-content: center;
+}
+
 .error-message {
     color: red;
     align-items: center;
+}
+
+.captchaGroup {
+    display: flex;
+    align-items: center
 }
