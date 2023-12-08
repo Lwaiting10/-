@@ -3,6 +3,7 @@ const regExpChinese = /[\u4e00-\u9fa5]/;
 function validateForm() {
     let username = document.getElementById('username').value;
     let password = document.getElementById('password').value;
+    console.log("进来了")
     // 检查用户名和密码是否为空
     if (username.trim() === '' || password.trim() === '') {
         // 阻止表单提交
@@ -26,6 +27,7 @@ document.getElementById('switch').addEventListener('click', function (event) {
     let rememberMeLabel = document.querySelector('.Remember');
     let switchBtn = document.getElementById('switch');
     let form = document.querySelector('form');
+    let captchaGroup = document.getElementById('captchaGroup');
     if (title.innerText === 'Login') {
         title.innerText = 'Register';
         loginBtn.value = '注册';
@@ -37,6 +39,9 @@ document.getElementById('switch').addEventListener('click', function (event) {
         document.getElementById('username').placeholder = '添加用户名';
         document.getElementById('password').placeholder = '添加密码';
         document.getElementById('password').type = 'password';
+        captchaGroup.style.display = "none";
+        // 将验证码输入框设置为非必填
+        document.getElementById('captcha').removeAttribute('required');
     } else {
         title.innerText = 'Login';
         loginBtn.value = '登录';
@@ -46,6 +51,8 @@ document.getElementById('switch').addEventListener('click', function (event) {
         document.getElementById('username').placeholder = '用户名';
         document.getElementById('password').placeholder = '密码';
         document.getElementById('password').type = 'password';
+        captchaGroup.style.display = "";
+        document.getElementById('captcha').setAttribute('required', 'required');
     }
 });
 

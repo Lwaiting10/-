@@ -19,6 +19,15 @@ import java.util.Map;
 public class UserService {
     private final static UserDao USER_DAO = new UserDaoImpl();
 
+    public static boolean register(String username, String password) {
+        User user = USER_DAO.findByUsername(username);
+        if (user == null) {
+            USER_DAO.save(new User(username, password));
+            return true;
+        }
+        return false;
+    }
+
     /**
      * 用户登录方法
      *

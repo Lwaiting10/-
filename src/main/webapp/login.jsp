@@ -25,14 +25,15 @@
         <div class="form-group">
             <input type="password" id="password" name="password" placeholder="密码" required>
         </div>
-        <div class="form-group" style="display: flex;align-items: center">
+        <div class="form-group" id="captchaGroup" style="display: flex;align-items: center">
             <input type="text" id="captcha" name="captcha" placeholder="验证码" required>
-            <img id="captchaImage" src="kaptcha.jpg" alt="Captcha" onclick="changeCaptcha()" style="width: 50%;height: 40px;border: 0;border-radius: 5px">
+            <img id="captchaImage" src="kaptcha.jpg" alt="Captcha" onclick="changeCaptcha()"
+                 style="width: 50%;height: 40px;border: 0;border-radius: 5px">
         </div>
         <%-- 读取错误信息并展示 --%>
         <c:if test="${not empty errorMessage}">
             <div class="error-message-box">
-        <span class="error-message">
+        <span class="error-message" id="error-message">
                 ${errorMessage}
         </span>
             </div>
