@@ -23,11 +23,6 @@ import java.util.Map;
 public class EditGoodsSubmitServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        if (req.getSession().getAttribute("user") == null) {
-            resp.sendRedirect("login.jsp");
-            return;
-        }
-        req.setCharacterEncoding("UTF-8");
         Goods goods = (Goods) req.getSession().getAttribute("editGoods");
         Map<String, String[]> newGoods = req.getParameterMap();
         if (!GoodsService.update(goods, newGoods)) {

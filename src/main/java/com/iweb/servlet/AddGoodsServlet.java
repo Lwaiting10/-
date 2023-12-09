@@ -19,10 +19,6 @@ import java.io.IOException;
 public class AddGoodsServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        if (req.getSession().getAttribute("user") == null) {
-            resp.sendRedirect("login.jsp");
-            return;
-        }
         req.setCharacterEncoding("UTF-8");
         HttpSession session = req.getSession();
         int cid = Integer.parseInt((String) session.getAttribute("cid"));

@@ -36,9 +36,12 @@ public class ClassifyService {
 
     public static void delete(int id) {
         CLASSIFY_DAO.delete(id);
-        // 其对应的商品也将删除
-        for (Goods goods : GoodsService.findByClassifyId(id)) {
-            GoodsService.delete(goods.getId());
+        List<Goods> goods = GoodsService.findByClassifyId(id);
+        if (goods != null) {
+            // 其对应的商品也将删除
+            for (Goods g : goods) {
+                GoodsService.delete(g.getId());
+            }
         }
     }
 

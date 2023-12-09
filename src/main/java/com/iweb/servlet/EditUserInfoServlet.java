@@ -27,11 +27,6 @@ import java.util.Map;
 public class EditUserInfoServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        if (req.getSession().getAttribute("user") == null) {
-            resp.sendRedirect("login.jsp");
-            return;
-        }
-        req.setCharacterEncoding("UTF-8");
         User user = (User) req.getSession().getAttribute("user");
         if (!UserService.update(user, req)) {
             // 修改失败设置错误信息

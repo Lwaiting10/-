@@ -19,11 +19,6 @@ import java.io.IOException;
 public class EditClassifySubmitServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        if (req.getSession().getAttribute("user") == null) {
-            resp.sendRedirect("login.jsp");
-            return;
-        }
-        req.setCharacterEncoding("UTF-8");
         Classify classify = (Classify) req.getSession().getAttribute("editClassify");
         String newName = req.getParameter("classifyName");
         if (!ClassifyService.update(classify, newName)) {

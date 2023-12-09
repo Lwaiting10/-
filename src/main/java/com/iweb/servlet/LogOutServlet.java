@@ -22,11 +22,6 @@ import java.util.Map;
 public class LogOutServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // 如果用户未登录，则跳转至登录页面
-        if (req.getSession().getAttribute("user") == null) {
-            resp.sendRedirect("login.jsp");
-            return;
-        }
         // 移除用户会话中的"user"属性
         req.getSession().removeAttribute("user");
         // 遍历请求中的所有Cookie

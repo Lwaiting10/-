@@ -18,10 +18,6 @@ import java.io.IOException;
 public class EditClassifyServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        if (req.getSession().getAttribute("user") == null) {
-            resp.sendRedirect("login.jsp");
-            return;
-        }
         int id = Integer.parseInt(req.getParameter("id"));
         Classify classify = ClassifyService.findById(id);
         req.getSession().setAttribute("editClassify", classify);

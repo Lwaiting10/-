@@ -51,7 +51,7 @@
             padding: 20px;
             border-radius: 10px;
             margin-bottom: 20px;
-            width: 30%; /* Adjust the width as needed */
+            width: 40%; /* Adjust the width as needed */
             display: flex;
             flex-direction: column;
             align-items: center;

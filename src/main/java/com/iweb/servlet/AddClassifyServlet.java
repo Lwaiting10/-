@@ -20,11 +20,7 @@ import java.io.IOException;
 public class AddClassifyServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        if (req.getSession().getAttribute("user") == null) {
-            resp.sendRedirect("login.jsp");
-            return;
-        }
-        req.setCharacterEncoding("UTF-8");
+
         String classifyName = req.getParameter("classifyName");
         Classify classify = new Classify(classifyName);
         if (!ClassifyService.save(classify)) {

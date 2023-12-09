@@ -21,10 +21,6 @@ import java.util.List;
 public class GoodsServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        if (req.getSession().getAttribute("user") == null) {
-            resp.sendRedirect("login.jsp");
-            return;
-        }
         String cid = req.getParameter("id");
         HttpSession session = req.getSession();
         List<Goods> goods = GoodsService.findByClassifyId(Integer.parseInt(cid));
